@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Admin · Your Name</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body style="background: black;">
+  <main class="page">
+
+    <!-- LOGIN VIEW -->
+    <section class="admin-card" id="login-view">
+      <h1 class="admin-title">Log in</h1>
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" autocomplete="current-password" />
+      </div>
+      <button class="btn" id="login-btn">Log in</button>
+      <div class="error-msg" id="login-error"></div>
+    </section>
+
+    <!-- ADMIN VIEW (hidden until logged in) -->
+    <section id="admin-view" style="display:none;">
+      <div class="admin-card" style="margin-bottom: 20px; width: 350px;">
+            <h1 class="admin-title">Edit profile</h1>
+
+          <div class="field">
+            <label for="p-name">Name</label>
+            <input id="p-name" type="text" />
+          </div>
+          <div class="field">
+            <label for="p-handle">Handle</label>
+            <input id="p-handle" type="text" placeholder="@yourhandle" />
+          </div>
+          <div class="field">
+            <label for="p-bio">Bio</label>
+            <input id="p-bio" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="p-avatar-file" >Profile photo</label>
+            <input id="p-avatar-file" type="file" accept="image/*" style="color: gray ;" />
+            <input type="hidden" id="p-avatar" />
+            <img id="p-avatar-preview" style="margin-top:8px; width:64px; height:64px; border-radius:50%; object-fit:cover; display:none;" />
+          </div>
+
+          <button class="btn" id="save-profile-btn">Save profile</button>
+          <div class="success-msg" id="profile-status"></div>
+
+      </div>
+      <div class="admin-card" style=" margin-bottom: 20px;">
+          <div class="section-divider">Add a link</div>
+          <div class="field">
+            <label for="l-title">Title</label>
+            <input id="l-title" type="text" placeholder="Instagram" />
+          </div>
+          <div class="field">
+            <label for="l-url">URL</label>
+            <input id="l-url" type="url" placeholder="https://instagram.com/you"  />
+          </div>
+          <div class="field">
+            <label for="l-icon-file">Link thumbnail/icon (optional)</label>
+            <input id="l-icon-file" type="file" accept="image/*" style="color: gray ;"  />
+            <input type="hidden" id="l-icon" />
+            <img id="l-icon-preview" style="margin-top:8px; width:40px; height:40px; border-radius:50%; object-fit:cover; display:none;" />
+          </div>
+          <button class="btn" id="add-link-btn">Add link</button>
+          <div class="error-msg" id="link-error"></div>
+
+          
+      </div>
+
+      <div class="admin-card" style=" margin-bottom: 10px;">
+          <div class="section-divider">Your links</div>
+          <div id="link-list"></div>
+
+      </div>
+
+      <div style=" margin-top: 30px;">
+         <button class="btn secondary" id="logout-btn" style="margin-top:20px;">Log out</button>
+      </div>
+      
+      
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

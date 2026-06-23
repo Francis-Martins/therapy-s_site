@@ -1,7 +1,57 @@
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const loginView = document.getElementById("login-view");
 const adminView = document.getElementById("admin-view");
+
+
+// -------------upload logic function-----------
+async function uploadImage(file, folder) {
+  const ext = file.name.split(".").pop();
+  const path = `${folder}/${Date.now()}.${ext}`;
+
+  const { error } = await supabase.storage
+    .from("public-assets")
+    .upload(path, file, { upsert: true });
+
+  if (error) {
+    console.error(error);
+    return null;
+  }
+
+  const { data } = supabase.storage.from("public-assets").getPublicUrl(path);
+  return data.publicUrl;
+}
+
+
+
+
+document.getElementById("p-avatar-file").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const url = await uploadImage(file, "avatars");
+  if (url) {
+    document.getElementById("p-avatar").value = url;
+    const preview = document.getElementById("p-avatar-preview");
+    preview.src = url;
+    preview.style.display = "block";
+  }
+});
+
+document.getElementById("l-icon-file").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const url = await uploadImage(file, "icons");
+  if (url) {
+    document.getElementById("l-icon").value = url;
+    const preview = document.getElementById("l-icon-preview");
+    preview.src = url;
+    preview.style.display = "block";
+  }
+});
+
+
+
+
 
 // ---------- Auth ----------
 
@@ -149,6 +199,10 @@ document.getElementById("add-link-btn").addEventListener("click", async () => {
   document.getElementById("l-title").value = "";
   document.getElementById("l-url").value = "";
   document.getElementById("l-icon").value = "";
+  document.getElementById("l-icon-preview").style.display = "none";
+  document.getElementById("l-icon-file").value = "";
+
+
   loadLinkList();
 });
 

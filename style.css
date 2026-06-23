@@ -186,7 +186,7 @@ body {
 /* ---- Admin page ---- */
 .admin-card {
   width: 100%;
-  background: #2a2a2a;
+  background: #0b0a0a;
   border-radius: 16px;
   padding: 24px;
 }
@@ -213,7 +213,7 @@ body {
   border: 1px solid rgba(255,255,255,0.15);
   font-size: 0.95rem;
   font-family: 'Inter', sans-serif;
-  background: #1f1f1f;
+  background: #0b0b0b;
   color: var(--ink);
 }
 
@@ -227,7 +227,7 @@ body {
   padding: 13px;
   border-radius: 10px;
   border: none;
-  background: #ffffff;
+  background: #282626;
   color: #111;
   font-size: 0.92rem;
   font-weight: 700;
