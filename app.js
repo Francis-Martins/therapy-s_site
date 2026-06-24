@@ -6,7 +6,7 @@ async function loadProfile() {
     .from("profile")
     .select("*")
     .eq("id", 1)
-    // .single()
+    .single()
     ;
 
   if (error || !data) return; // keep placeholder content if not set up yet
@@ -44,10 +44,10 @@ container.innerHTML = data
       (link, i) => `
 
       <div style="height: 60px; background: black; border-radius: 40px; margin-top: 0.5rem;">
-            <a style="height: 60px; background: white; border-radius: 40px; display:flex; gap: 0.5rem; align-items: center; padding: 10px 10px; font-family:urbanist; text-decoration: none; transform: translate(0px, -10px)"
-               href="${escapeAttr(link.url)}"
-               target="_blank"
-               rel="noopener noreferrer"
+            <a class="button-effect" style="height: 60px; border-radius: 40px; display:flex; gap: 0.5rem; align-items: center; padding: 10px 10px; font-family:urbanist; text-decoration: none;"
+              href="https://t.me/+2NpRGM48-38xYjk0"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div>
                 <img 
@@ -58,13 +58,13 @@ container.innerHTML = data
 />
               </div>
              
-              <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 550;
+              <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 550; display: flex; justify-content:center; align-items:center;
               ">
                 ${escapeHtml(link.title)}
               </div>
 
 
-              <div style="height: 40px; width:30px; display: flex; justify-content: center; align-items: center; font-weight:40px;">
+              <div style="height: 40px; width:30px; align-items: center; font-weight:40px;">
                 <i class="fa-solid fa-ellipsis-vertical" style="color: white; "></i>
               </div>
 
@@ -88,6 +88,13 @@ function escapeHtml(str) {
 function escapeAttr(str) {
   return (str ?? "").replace(/"/g, "&quot;");
 }
+
+//------------spare---------------
+
+document.querySelector(".button-effect").addEventListener("click", function () {
+  this.classList.toggle("clicked");
+});
+
 
 loadProfile();
 loadLinks();

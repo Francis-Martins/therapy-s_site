@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to top, rgb(29, 28, 28), var(--bg)) ;
+  background: linear-gradient(to top, rgb(11, 11, 11), rgb(56, 56, 56) ) ;
   color: var(--ink);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
@@ -311,4 +311,17 @@ body {
 
 #l-icon-file::file-selector-button:hover {
   background-color: #3a7bc8;
+}
+
+.button-effect {
+  background: white;
+  transform: translate(0px, -10px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+
+
+.button-effect:hover {
+  background: grey;
+   transform: translate(0px, 1px);
 }
