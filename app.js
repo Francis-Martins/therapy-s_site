@@ -51,7 +51,7 @@ container.innerHTML = data
             >
               <div>
                 <img 
-  src="${link.icons}"
+  src="${link.icon}"
   alt=""
   class="link-icon" 
   style="height: 50px; width: 50px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; object-fit: cover;"
