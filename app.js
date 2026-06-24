@@ -31,7 +31,15 @@ async function loadLinks() {
     return;
   }
 
-  container.innerHTML = data
+  function toThumbnailUrl(url, { width = 100, height = 100, resize = "cover", quality = 90 } = {}) {
+  if (!url) return url;
+  const transformed = url.replace("/storage/v1/object/public/", "/storage/v1/render/image/public/");
+  // only add params if it's actually a Supabase storage URL
+  if (transformed === url) return url;
+  return `${transformed}?width=${width}&height=${height}&resize=${resize}&quality=${quality}`;
+}
+
+container.innerHTML = data
     .map(
       (link, i) => `
 
@@ -41,8 +49,13 @@ async function loadLinks() {
                target="_blank"
                rel="noopener noreferrer"
             >
-              <div class="link-icon" style="height: 40px; width: 40px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; ">
-                 ${link.icon || "↗"}
+              <div>
+                <img 
+  src="${toThumbnailUrl(link.icon, { width: 100, height: 100 })}"
+  alt=""
+  class="link-icon" 
+  style="height: 50px; width: 50px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; object-fit: cover;"
+/>
               </div>
              
               <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 550;
@@ -52,7 +65,7 @@ async function loadLinks() {
 
 
               <div style="height: 40px; width:30px; display: flex; justify-content: center; align-items: center; font-weight:40px;">
-                <i class="fa-solid fa-ellipsis-vertical" style="color:rgb(76, 63, 63); "></i>
+                <i class="fa-solid fa-ellipsis-vertical" style="color: white; "></i>
               </div>
 
 
@@ -63,6 +76,7 @@ async function loadLinks() {
             `
     )
     .join("");
+
 }
 
 function escapeHtml(str) {

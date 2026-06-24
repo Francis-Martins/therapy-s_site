@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to top, black, rgb(29, 28, 28), var(--bg)) ;
+  background: linear-gradient(to top, rgb(29, 28, 28), var(--bg)) ;
   color: var(--ink);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
@@ -129,7 +129,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.link-thumb {
+.link-list {
   position: absolute;
   left: 6px;
   top: 6px;
@@ -189,6 +189,10 @@ body {
   background: #0b0a0a;
   border-radius: 16px;
   padding: 24px;
+  max-width: 400px;
+  
+  
+
 }
 
 .admin-title {
@@ -227,7 +231,7 @@ body {
   padding: 13px;
   border-radius: 10px;
   border: none;
-  background: #282626;
+  background: #484646;
   color: #111;
   font-size: 0.92rem;
   font-weight: 700;
@@ -235,11 +239,7 @@ body {
 }
 
 .btn:active { opacity: 0.85; }
-.btn.secondary {
-  background: transparent;
-  color: var(--muted);
-  border: 1px solid rgba(255,255,255,0.2);
-}
+
 
 .link-row {
   display: flex;
@@ -269,8 +269,46 @@ body {
 
 .section-divider {
   margin: 22px 0 14px;
-  font-size: 0.72rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--muted);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+
+.t{
+  overflow-y: scroll;
+  scrollbar-width: none;        /* Firefox */
+}
+.box::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari/Edge */
+}
+
+#p-avatar-file::file-selector-button {
+  background-color: rgb(58, 57, 57);
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#p-avatar-file::file-selector-button:hover {
+  background-color: #3a7bc8;
+}
+
+#l-icon-file::file-selector-button {
+  background-color: rgb(58, 57, 57);
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#l-icon-file::file-selector-button:hover {
+  background-color: #3a7bc8;
 }

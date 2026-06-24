@@ -137,20 +137,23 @@ async function loadLinkList() {
   listEl.innerHTML = data
     .map(
       (link, i) => `
-      <div class="link-row" data-id="${link.id}">
+
+    <div class="link-row" data-id="${link.id}">
         <div class="row-actions">
           <button class="icon-btn move-up" title="Move up" ${i === 0 ? "disabled" : ""}>↑</button>
           <button class="icon-btn move-down" title="Move down" ${i === data.length - 1 ? "disabled" : ""}>↓</button>
         </div>
         <div class="meta">
-          <div class="t">${link.icon ? link.icon + " " : ""}${escapeHtml(link.title)}</div>
+          <div class="t" style=" overflow-y: auto; padding:10px; color:grey;">${link.icon ? link.icon + " " : ""}${escapeHtml(link.title)}</div>
           <div class="u">${escapeHtml(link.url)}</div>
         </div>
         <div class="row-actions">
           <button class="icon-btn toggle-active" title="${link.is_active ? "Hide" : "Show"}">${link.is_active ? "👁" : "🚫"}</button>
           <button class="icon-btn delete-link" title="Delete">🗑</button>
         </div>
-      </div>`
+      </div>
+      
+      `
     )
     .join("");
 

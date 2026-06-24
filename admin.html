@@ -6,7 +6,7 @@
 <title>Admin · Your Name</title>
 <link rel="stylesheet" href="style.css" />
 </head>
-<body style="background: black;">
+<body style="background: rgb(33, 33, 33);">
   <main class="page">
 
     <!-- LOGIN VIEW -->
@@ -26,7 +26,7 @@
 
     <!-- ADMIN VIEW (hidden until logged in) -->
     <section id="admin-view" style="display:none;">
-      <div class="admin-card" style="margin-bottom: 20px; width: 350px;">
+      <div class="admin-card" style="margin-bottom: 20px;">
             <h1 class="admin-title">Edit profile</h1>
 
           <div class="field">
@@ -43,10 +43,10 @@
           </div>
 
           <div class="field">
-            <label for="p-avatar-file" >Profile photo</label>
+            <label for="p-avatar-file">Profile photo</label>
             <input id="p-avatar-file" type="file" accept="image/*" style="color: gray ;" />
             <input type="hidden" id="p-avatar" />
-            <img id="p-avatar-preview" style="margin-top:8px; width:64px; height:64px; border-radius:50%; object-fit:cover; display:none;" />
+            <input id="p-avatar-preview" style="margin-top:8px; width:64px; height:64px; border-radius:50%; object-fit:cover; display:none;" />
           </div>
 
           <button class="btn" id="save-profile-btn">Save profile</button>
@@ -54,7 +54,7 @@
 
       </div>
       <div class="admin-card" style=" margin-bottom: 20px;">
-          <div class="section-divider">Add a link</div>
+          <div class="admin-title">Add a link</div>
           <div class="field">
             <label for="l-title">Title</label>
             <input id="l-title" type="text" placeholder="Instagram" />
@@ -64,7 +64,7 @@
             <input id="l-url" type="url" placeholder="https://instagram.com/you"  />
           </div>
           <div class="field">
-            <label for="l-icon-file">Link thumbnail/icon (optional)</label>
+            <label for="l-icon-file">Link thumbnail/icon</label>
             <input id="l-icon-file" type="file" accept="image/*" style="color: gray ;"  />
             <input type="hidden" id="l-icon" />
             <img id="l-icon-preview" style="margin-top:8px; width:40px; height:40px; border-radius:50%; object-fit:cover; display:none;" />
@@ -76,13 +76,13 @@
       </div>
 
       <div class="admin-card" style=" margin-bottom: 10px;">
-          <div class="section-divider">Your links</div>
-          <div id="link-list"></div>
+          <div class="admin-title">Your links</div>
+          <div id="link-list" style="overflow-y:auto;" padding:10px;></div>
 
       </div>
 
       <div style=" margin-top: 30px;">
-         <button class="btn secondary" id="logout-btn" style="margin-top:20px;">Log out</button>
+         <button class="btn" id="logout-btn" style="margin-top:px;">Log out</button>
       </div>
       
       
