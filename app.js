@@ -45,13 +45,13 @@ container.innerHTML = data
 
       <div style="height: 60px; background: black; border-radius: 40px; margin-top: 0.5rem;">
             <a class="button-effect" style="height: 60px; border-radius: 40px; display:flex; gap: 0.5rem; align-items: center; padding: 10px 10px; font-family:urbanist; text-decoration: none;"
-              href="https://t.me/+2NpRGM48-38xYjk0"
+              href="${link.url}"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div>
                 <img 
-  src="${toThumbnailUrl(link.icon, { width: 100, height: 100 })}"
+  src="${link.icons}"
   alt=""
   class="link-icon" 
   style="height: 50px; width: 50px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; object-fit: cover;"
@@ -89,11 +89,6 @@ function escapeAttr(str) {
   return (str ?? "").replace(/"/g, "&quot;");
 }
 
-//------------spare---------------
-
-document.querySelector(".button-effect").addEventListener("click", function () {
-  this.classList.toggle("clicked");
-});
 
 
 loadProfile();
