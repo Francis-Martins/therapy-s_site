@@ -321,6 +321,7 @@ body {
 
 
 
-.button-effect:hover {
+.button-effect:active{
+  background: grey;
    transform: translate(0px, 1px);
 }
