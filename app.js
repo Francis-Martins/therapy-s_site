@@ -43,9 +43,9 @@ container.innerHTML = data
     .map(
       (link, i) => `
 
-      <div style="height: 60px; background: black; border-radius: 40px; margin-top: 0.5rem;">
+      <div style="height: 60px; background: grey; border-radius: 40px; margin-top: 0.5rem;">
             <a class="button-effect" style="height: 60px; border-radius: 40px; display:flex; gap: 0.5rem; align-items: center; padding: 10px 10px; font-family:urbanist; text-decoration: none;"
-              href="${link.url}"
+              href="${escapeAttr(link.url)}"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -58,7 +58,7 @@ container.innerHTML = data
 />
               </div>
              
-              <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 550; display: flex; justify-content:center; align-items:center;
+              <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 800; display: flex; justify-content:center; align-items:center;
               ">
                 ${escapeHtml(link.title)}
               </div>
@@ -88,6 +88,14 @@ function escapeHtml(str) {
 function escapeAttr(str) {
   return (str ?? "").replace(/"/g, "&quot;");
 }
+
+document.getElementById("links").addEventListener("click", function (e) {
+  const card = e.target.closest(".button-effect");
+  if (card) {
+    card.classList.add("pressed");
+    setTimeout(() => card.classList.remove("pressed"), 200);
+  }
+});
 
 
 

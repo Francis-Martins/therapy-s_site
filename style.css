@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to top, rgb(11, 11, 11), rgb(56, 56, 56) ) ;
+  background: linear-gradient(to top, rgb(11, 11, 11), black,rgb(56, 56, 56) ) ;
   color: var(--ink);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
@@ -158,6 +158,7 @@ body {
   display: flex;
   gap: 22px;
   margin-bottom: 36px;
+  
 }
 
 .social-row a {
@@ -167,7 +168,7 @@ body {
   justify-content: center;
   width: 26px;
   height: 26px;
-  opacity: 0.9;
+  opacity: 1;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
@@ -317,11 +318,16 @@ body {
   background: white;
   transform: translate(0px, -10px);
   transition: transform 0.2s ease, background 0.2s ease;
+  font-weight: 900;
 }
 
 
-
-.button-effect:active{
+.button-effect.pressed{
   background: grey;
-   transform: translate(0px, 1px);
+   transform: translate(0px, 5px);
+}
+
+.fa-brands{
+
+  font-size: 24px;
 }
