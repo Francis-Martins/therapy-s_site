@@ -12,54 +12,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <main class="page" style="position:relative;">
-    <div class="avatar-wrap" style="margin-top:10px;">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <main class="page" id="page" style="position:relative;">
+    <div class="avatar-wrap reveal" style="margin-top:10px;">
       <span class="avatar-ring"></span>
       <span class="avatar-ring delay"></span>
       <img class="avatar" id="avatar" src="picture1.jpeg" alt="Profile photo" />
     </div>
 
-    <h1 class="name" id="name" style="color: white; font-weight: 900;">Digital_therapy</h1>
-    <p class="bio" id="bio" style="color: whitesmoke;">Digital Entrepreneur | Affiliate Marketing Coach  Helping people turn their smartphones into income through: • Affiliate Marketing • Sales • Personal Branding  Founder & CEO Smart Earnings Academy  💰My  Average student earns $350+/month online.</p>
+    <h1 class="name reveal" id="name" style="color: white; font-weight: 900;">DIGITAL SIR_THERAPY</h1>
+    <p class="bio reveal" id="bio" style="color: whitesmoke;">Digital Entrepreneur | Affiliate Marketing Coach  Helping people turn their smartphones into income through: • Affiliate Marketing • Sales • Personal Branding  Founder & CEO Smart Earnings Academy  💰My  Average student earns $350+/month online.</p>
 
     <div class="links" id="links">
-           <!-- Links render here via JS -->
-      
-
+      <!-- Links render here via JS -->   
     </div>
-
-    
-    
-
-
-<div class="social-row" id="socials" ">
-
-      <a href="https://x.com/therapy6345?s=11" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <i class="fa-brands fa-solid fa-x-twitter "></i>
-      </a>
-
-      <a href="https://www.instagram.com/digitalsirtherapy?igsh=Nmt3aTQ3N3J1NGN4&utm_source=qr" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <i class="fa-brands fa-solid fa-instagram"></i>
-      </a>
-
-      <a href="https://youtube.com/@digitalsirtherapy?si=kABda5svo7XkGdTm" style="text-decoration: none;">
-        <i class="fa-brands fa-solid fa-youtube"></i>
-      </a>
-
-      <!-- <a href="https://www.facebook.com/share/1RWZ7PVvLn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <i class="fa-brands fa-solid fa-facebook"></i>
-      </a> -->
-
-      <a href="https://www.tiktok.com/@therapy5.0g?_r=1&_t=ZS-97WwGeDQYEL" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <i class="fa-brands fa-solid fa-tiktok"></i>
-      </a>
-
-</div>
-
+    <div class="social-row reveal" id="socials" ">
+          <a href="https://x.com/therapy6345?s=11" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <i class="fa-brands fa-solid fa-x-twitter "></i>
+          </a>
+          <a href="https://www.instagram.com/digitalsirtherapy?igsh=Nmt3aTQ3N3J1NGN4&utm_source=qr" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <i class="fa-brands fa-solid fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@digitalsirtherapy?si=kABda5svo7XkGdTm" style="text-decoration: none;">
+            <i class="fa-brands fa-solid fa-youtube"></i>
+          </a>
+          <!-- <a href="https://www.facebook.com/share/1RWZ7PVvLn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <i class="fa-brands fa-solid fa-facebook"></i>
+          </a> -->
+          <a href="https://www.tiktok.com/@therapy5.0g?_r=1&_t=ZS-97WwGeDQYEL" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <i class="fa-brands fa-solid fa-tiktok"></i>
+          </a>
+    </div>
     <div class="footer-note" style="color: whitesmoke; letter-spacing: 2px;">Join me on the web</div>
-    
   </main>
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="app.js"></script>

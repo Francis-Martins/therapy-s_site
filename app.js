@@ -43,7 +43,7 @@ container.innerHTML = data
     .map(
       (link, i) => `
 
-      <div style="height: 60px; background: grey; border-radius: 40px; margin-top: 0.5rem;">
+      <div class="reveal" style="height: 60px; background: grey; border-radius: 40px; margin-top: 0.5rem; animation-delay: ${0.45 + i * 0.15}s;">
             <a class="button-effect" style="height: 60px; border-radius: 40px; display:flex; gap: 0.5rem; align-items: center; padding: 10px 10px; font-family:urbanist; text-decoration: none;"
               href="${escapeAttr(link.url)}"
               target="_blank"
@@ -51,29 +51,22 @@ container.innerHTML = data
             >
               <div>
                 <img 
-  src="${link.icon}"
-  alt=""
-  class="link-icon" 
-  style="height: 50px; width: 50px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; object-fit: cover;"
-/>
+                  src="${link.icon}"
+                  alt=""
+                  class="link-icon" 
+                  style="height: 50px; width: 50px; background: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; object-fit: cover;"
+                />
               </div>
-             
               <div style="height: 40px; width: 150px; border-radius: 10px; flex: 1; color:black; text-align: center; padding: 3px; font-size: 15px; font-weight: 800; display: flex; justify-content:center; align-items:center;
               ">
                 ${escapeHtml(link.title)}
               </div>
-
-
               <div style="height: 40px; width:30px; align-items: center; font-weight:40px;">
                 <i class="fa-solid fa-ellipsis-vertical" style="color: white; "></i>
-              </div>
-
-
-              
+              </div>            
             </a>
-          </div>
-            
-            `
+      </div>
+                     `
     )
     .join("");
 
@@ -99,5 +92,40 @@ document.getElementById("links").addEventListener("click", function (e) {
 
 
 
-loadProfile();
-loadLinks();
+// loadProfile();
+// loadLinks();
+
+function withTimeout(promise, ms){
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('timeout')), ms)
+    )
+  ]);
+}
+
+function revealPage(){
+  const loader = document.getElementById('loader');
+  const page = document.getElementById('page')
+  page.classList.add ('visible')
+  loader.classList.add('hidden')
+  setTimeout(()=>{loader.style.display = 'none';}, 500)
+}
+
+const minTimer = new Promise(resolve => setTimeout(resolve, 500));
+
+const pageLoaded = new Promise(resolve => {
+  if (document.readyState === 'complete') resolve();
+  else window.addEventListener('load',resolve);
+});
+
+const dataFetch = withTimeout(
+  Promise.all([loadProfile(), loadLinks()]), 
+  15000
+).catch(err => {
+  console.error('Failed to load profile/links:', err);
+  document.getElementById('links').innerHTML = 
+  '<p style="color:white;"> Couldn\'t load content right now. <button id="retryBtn" onclick ="location.reload()"> Retry</button></p>';
+});
+
+Promise.all([dataFetch, pageLoaded, minTimer]).then(revealPage);
