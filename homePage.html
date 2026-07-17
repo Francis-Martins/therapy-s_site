@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Earning Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#000;
+    --blue:#173f8a;
+    --blue-light:#2f6fe0;
+    --gold:#f5a623;
+    --cream:#f7f8fb;
+    --text:black;
+    --muted:#5c6678;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Montserrat',Arial,sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.6;
+    }
+  .wrap{max-width:640px;margin:0 auto;background:#fff;}
+  .hero{
+    background:#10367b;
+    color:#fff;
+    padding:2px 24px 40px;
+    /* text-align:center; */
+  }
+  .hero h1{
+    
+    font-size:2em;
+    line-height:1.35;
+    margin-bottom:10px;
+    margin-block-start:0.67em;
+    
+
+}
+  .hero p{color:#cdd8f2;font-size:15px;max-width:520px;margin:0 auto;}
+  .cta-btn{
+    display:inline-block;
+    background:linear-gradient(120deg, rgba(143, 66, 236, 0), #812bea);
+    background-color:#b142ec;
+    color:#fff;
+    text-transform:uppercase;
+    font-weight:bold;
+    padding:14px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    margin:20px auto 0;
+    font-size:15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;  }
+  section{padding:15px 5px;}
+  h2{color:var(--navy);font-size:1.5em;margin-bottom:14px; line-height:1.2;}
+  ul{padding-left:20px;margin:12px 0;}
+  li{margin-bottom:8px;}
+  .img-placeholder{
+    background:#dfe6f5;
+    border:1px #9fb3dd;
+    border-radius:8px;
+    /* height:328px; */
+    width: fit-content;;
+    display:flex;
+    padding: 10px;
+    align-items:center;
+    /* justify-content:center; */
+    color:#5c6ea8;
+    font-size:13px;
+    margin:15px;
+
+    
+  }
+
+  .img-placeholder img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  .img-placeholder-mini{
+    background:#dfe6f5;
+    border:1px #9fb3dd;
+    border-radius:8px;
+    height:285px;
+    width:fit-content;
+    display:flex;
+    /* align-items:center; */
+    /* justify-content:center; */
+    color:#5c6ea8;
+    font-size:13px;
+    margin:15px;
+    justify-content: flex-start;
+    padding: 10px;
+  
+  }
+  .row-3{display:grid;grid-template-columns:1fr;gap:2px;}
+  /* .row-3 .img-placeholder{} */
+  .testimonial{
+    background:var(--cream);
+    border-radius:10px;
+    padding:18px;
+    margin-bottom:18px;
+    border:1px solid #e5e9f2;
+  }
+  .testimonial h3{color:var(--blue);font-size:16px;margin-bottom:6px;
+  }
+  .value-list{list-style:none;padding:0;}
+  .value-list li{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px dashed #d8dde8;
+    padding:10px 0;
+    font-size:14px;
+  }
+  .value-list span.price{color:var(--navy);font-weight:700;white-space:nowrap;margin-left:10px;}
+  .price-box{
+    background:var(--navy);
+    color:#fff;
+    border-radius:10px;
+    padding:24px;
+    text-align:center;
+    margin:16px 0;
+  }
+  .price-box .old{text-decoration:line-through;color:#9db2e0;font-size:15px;}
+  .price-box .new{font-size:30px;font-weight:800;color:var(--gold);margin:8px 0;}
+  .timer{
+    font-size:2.5rem;
+    font-weight:bold;
+    text-align:center;
+    padding:0.5rem;
+    letter-spacing:2px;
+  }
+  .center{text-align:center;}
+  .countdown{
+    background-color:#10367b;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 10px;
+
+}
+.enroll-box{
+    background-color:#10367b;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 10px; 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.countdown p{
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #fff;
+    text-align:center;
+    /* padding-right: 1rem; */
+}
+ img{max-width:400px;
+border-radius: 8px;
+height: 267px;
+width: 150px;
+}
+h2{
+  text-align: center;
+}
+p{
+  margin-top: 8px;
+}
+  footer{padding:24px;text-align:center;font-size:12px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. Hero -->
+  <div class="hero">
+    <h1>Build a Profitable Affiliate Marketing Business with Smart Earning Academy
+    Learn the skills to promote products online and earn commissions.</h1>
+    <p>Welcome to Smart Earning Academy, where you’ll learn practical affiliate marketing skills that can help you build a real online business from the ground up.
+
+    Whether you’re a student, a working professional, or someone looking to earn online, this training is designed to guide you from beginner to confident affiliate marketer.
+</p>
+    <a href="https://selar.com/77f5cv8809" class="cta-btn">I'm ready to get started</a>
+  </div>
+
+  <!-- 2. What Is Affiliate Marketing -->
+  <section>
+    <h2>What Is Affiliate Marketing?</h2>
+    <p>Affiliate marketing is a simple business model.
+    You recommend products or services that people already want. When someone purchases through your unique affiliate link, you earn a commission from the company. You don’t need to create your own product.
+    You don’t need to handle deliveries.
+    You don’t need to provide customer support. Your main job is learning how to connect the right people with the right products.
+
+</p>
+  </section>
+
+  <!-- 3. Is this training for you -->
+  <section>
+    <!-- <h2 style="margin-bottom: 8px;">Is This Training for You?</h2> -->
+    <p>This course is for you if you:</p>
+    <ul>
+      <li>Are completely new to affiliate marketing.</li>
+      <li>Want to build an online income with practical skills.</li>
+      <li>Want to learn how to market products the right way.</li>
+      <li>Want to grow your personal brand on social media.</li>
+      <li>Are ready to learn and apply what you discover.</li>
+      
+    </ul>
+    <p>No previous experience is required.</p>
+  </section>
+
+  <!-- 4. Meet Your Coach -->
+  <section>
+    <h2>Meet Your Coach</h2>
+    <p>From Sleeping on the Floor to Building a Digital Business
+
+      My name is Sunday Emmanuel Igbe, popularly known as Digital Sir Therapy.
+
+      I am a First Class Mechanical Engineering student at the Federal University of Technology, Owerri (FUTO).
+
+      Today, I am the Founder and CEO of Smart Earning Academy, where I teach people practical digital skills and affiliate marketing. I am also the Founder and CEO of Therapy’s Elite Fashion Academy (TEFA), an academic science tutor, a fashion runway model, and a digital entrepreneur passionate about building valuable digital products that help people grow.
+</p>
+ 
+    <p style="margin-top: 8px;">But my journey didn’t begin here.
+
+      I am the first child in a family of seven. Growing up, life was far from easy. We had very little, and there were many days when it felt like success was only a dream.
+
+      When I gained admission into the university, things were still difficult. During my first year, I slept on the floor because I couldn’t afford better accommodation. There was no financial support waiting for me, so I had to find ways to survive.
+    </p>
+    <p style="margin-top: 8px;">I did almost every honest job I could find.</p>
+    <div>
+      <ul>
+        <li>I sold buns</li>
+        <li>I sold egg rolls</li>
+        <li>I sold akara</li>
+        <li>I sold local brooms</li>
+        <li>I sold coconuts</li>
+        <li>I boiled groundnuts</li>
+      </ul>
+    </div>
+    <div class="row-3">
+      <div class="img-placeholder">
+        <img src="testimonial/before.png" alt="">
+      </div>
+      <!-- <div class="img-placeholder"></div>
+      <div class="img-placeholder"></div> -->
+    </div>
+  
+    <p style="margin-top: 8px;">
+        I worked hard every single day just to meet my basic needs.
+
+        Those jobs taught me discipline, resilience, and the value of hard work, but they were only enough to help me survive. They couldn’t give me the future I dreamed about.
+
+        Even with all the challenges, I refused to give up.
+
+        I remained focused on my education, continued building my skills, and believed that one day my story would change.
+
+        That turning point came during my Industrial Training (IT) in my fourth year at the university.
+
+        Interestingly, the person who introduced me to affiliate marketing wasn’t a millionaire or a celebrity.
+
+        It was one of my own 100-level students.
+
+        At first, I was curious.
+
+        The more I learned, the more I realized that affiliate marketing wasn’t just about earning commissions—it was about learning digital marketing, creating value, solving problems, and building an online business.
+
+        I decided to commit myself to learning and applying everything I could.
+
+        That decision changed my life.
+
+        Through affiliate marketing and the digital skills I developed along the way, I was able to achieve things I once thought were impossible as a student.
+
+        I bought my first car while still in school.
+
+        I rented and furnished my own apartment, including installing a solar power system for reliable electricity.
+
+        I purchased devices that helped me work and create content more effectively, including an iPhone 14 Pro, a Huawei Watch Fit 3, and a Samsung S23 Ultra.
+
+        More importantly, I discovered a way to build an income by creating value for other people.
+
+        Affiliate marketing didn’t magically make me successful overnight.
+
+        It gave me an opportunity.
+
+        My consistency, willingness to learn, and determination to keep improving allowed me to take advantage of that opportunity.
+
+        
+        I teach others because I know what it feels like to struggle.
+
+        I know what it feels like to wonder where the next meal will come from.
+
+        I know what it feels like to have big dreams but limited resources.
+
+        That is why Smart Earning Academy exists.
+
+        My mission is to help ordinary people learn practical digital skills, build confidence, and create opportunities for themselves in today’s digital economy.
+
+        
+</p>
+
+    <p style="margin-top: 8px;"></p>
+
+    <!-- <p style="margin-top: 8px;">You can look below and see the outcome of that one move I made in 2022 - my entire life changed permanently</p> -->
+    <div class="row-3">
+      <div class="img-placeholder">
+        <img src="testimonial/withcar1.jpeg" alt="">
+      </div>
+      <div class="img-placeholder">
+        <img src="testimonial/withcar2.png" alt="">
+      </div>
+      <div class="img-placeholder">
+        <img src="testimonial/givingSpeech.png">
+      </div>
+    </div>
+    <div class="center" style="margin-top:16px;"><a href="https://selar.com/77f5cv8809" class="cta-btn">I'm ready to get started</a></div>
+
+<p>
+   If I could move from sleeping on the floor to building businesses while still a university student, I truly believe that with the right guidance, consistent effort, and a willingness to learn, you can also build something meaningful.
+</p>
+
+    <p>Your background does not have to determine your future.</p>
+
+    <p>The decision you make today could be the beginning of your own transformation.</p>
+
+    <p>I look forward to welcoming you to Smart Earning Academy.</p>
+
+    <p>Let’s build your success story—together.</p>
+</p>
+  </section>
+    
+  
+   
+   
+  
+
+  <!-- 8. Teaching journey -->
+  
+    <!-- <p style="margin-top: 8px;">
+        Affiliate Marketing doesn’t only give you money, but also gives you freedom to work from anywhere and anytime you choose that’s why I can travel as much as I want today and still make more money than people going to work everyday
+    </p>
+    <p style="margin-top: 8px;">After making up to ₦4 million from the business, I decided to start teaching my close friends and siblings how it's done. 
+    <p style="margin-top: 8px;">
+    After making up to 4 million naira from the business, I decided to start teaching my close friends and siblings how it’s done and this was where my teaching journey began</p> 
+    <p style="margin-top: 8px;">
+        I helped my elder sister, quit her 9 - 5 job after teaching her how to make money online and I also brought my cousin into it and he sponsored himself through school without disturbing parents
+    </p>
+    <p style="margin-top: 8px;">
+        I decided to show this same opportunity to the outside world and not just my family and boom everyone who came to learn from me started doing so well till the testimonies started gaining attention and my students kept growing massively and I started getting several invitations to teach in seminar, churches and radio stations
+    </p>
+    <p style="margin-top: 8px;">
+        Today I have personally helped over 3,000 persons gain financial freedom through affiliate marketing,
+    </p>
+    <p style="margin-top: 12px; margin-bottom: 12px;">
+        Just like MaryJoan on the picture below
+    </p> -->
+
+  </section>
+
+  <!-- 9. Testimonials -->
+  <section>
+    <h2>Success Stories from My Students</h2>
+
+    <div class="testimonial">
+      <h3>Ajiboyetoyo</h3>
+      <p>This is a student of mine who doesn’t miss my mentorship classes, and now he made over 100k in a week, to think that he’s even a WAEC student, don’t even waste another time on this golden opportunity and enroll now </p>
+      <div class="img-placeholder-mini">
+        <img src="testimonial/testimonial1.png" alt=""border-radius: 5px;">
+      </div>
+      
+    </div>
+
+    <div class="testimonial">
+      <h3>Benedict</h3>
+      <p>I remember this my student, because he bought the smart earning academy course and he was expecting instant result, I later coached him personally and he understood the business model, now he is making lots of money from it, because I mentored him.</p>
+      <div class="img-placeholder-mini">
+        <img src="testimonial/testimonial2.jpeg" alt="" >
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <h3>Cistus</h3>
+      <p>One of my best student, this Mr cistus,same person that was a sales boy at a super market and he was sacked and accused of stealing money in the shop because the boss didn’t want to pay him or settle him, he was frustrated and nearly took his own life, until he met me one day teaching a small group of persons affiliate marketing and he begged to join, he had to do installmental payment, till he completed his money and enrolled into smart earning academy,today he can even choose to buy the super market, all thanks to affiliate marketing, it’s a life saver indeed</p>
+      <div class="img-placeholder-mini">
+        <img src="testimonial/testimonial3.jpeg" alt="">
+      </div>
+    </div>
+
+    <div class="center"><a href="https://selar.com/77f5cv8809" class="cta-btn">I'm ready to get started</a></div>
+  </section>
+
+  <!-- 10. Why different -->
+  <section>
+    <h2>What Makes Smart Earning Academy Different?</h2>
+    <p>This isn’t just a course full of theory.
+
+You’ll receive practical resources that you can apply immediately, including:</p>
+    <ul>
+      <li>Step-by-step video lessons</li>
+      <li>Easy-to-follow action plans</li>
+      <li>Practical examples</li>
+      <li>Access to a supportive learning communitys</li>
+      <li>Guidance and mentorship throughout your journey
+
+</li>
+    </ul>
+  </section>
+
+  <!-- 11. What you'll get -->
+  <section>
+    <h2>Here's What You'll Receive</h2>
+    <ul>
+      <li> Product selection strategies</li>
+      <li>Facebook and Instagram advertising lessons</li>
+      <li>Graphic design tutorials</li>
+      <li>Marketing automation training</li>
+      <li>Sales and marketing templates</li>
+      <li>Access to the Smart Earning Academy community</li>
+      <li>Ongoing mentorship and support</li>
+      <li>Bonus personal branding lessons</li>
+      <li>Sales presentation and webinar resources</li>
+    </ul>
+      <h2>What You Can Achieve</h2>
+    <ul>
+       <li> Build a professional online presence. </li>
+       <li>Promote products with confidence.</li>
+       <li>Create content that attracts the right audience.</li>
+       <li>Develop marketing systems that save time.</li>
+       <li>Build an online business you can continue growing over time.</li>
+    </ul>
+   
+    <p  style="margin-bottom: 15px;">Your results will depend on factors such as your effort, consistency, skills, and the market. This course is designed to give you the knowledge and tools to help you succeed, but individual outcomes will vary.
+    </p>
+
+    <div class="enroll-box">
+        <p style="margin-bottom: 10px;">💰 Join Today & Get Instant Access</p>
+        <p>🎁 SPECIAL OFFER: The complete Smart Earning Academy training has previously been offered at ₦150,000.
+        For a limited time, you can join for just:
+        ₦50,000
+</p>
+        <div class="center" style="margin-top:10px;"><a href="https://selar.com/77f5cv8809r" class="cta-btn">I'm ready to get started</a></div>
+    </div>
+   
+  </section>
+
+  <!-- 13. Earnings screenshots -->
+  <section>
+    <!-- <h2>Real Payout Examples</h2> -->
+    <p>Imagine yourself making huge figures working  from home as an affiliate marketer, here are some of my payouts from affiliate marketing:</p>
+    <div class="row-3">
+      <div class="img-placeholder"><img src="testimonial/earningProof1.png" alt=""></div>
+      <div class="img-placeholder"><img src="testimonial/earningProof2.png" alt=""></div>
+      <div class="img-placeholder"><img src="testimonial/earningProof3.png" alt=""></div>
+    </div>
+    
+    <p class="muted" style="margin-top:10px;">Earnings are random, not static, this is the possibility of making money online.</p> 
+  </section>
+
+  <!-- 14. Urgency -->
+  <!-- <section>
+    <h2 class="center">⚠ Don't Wait… The Best Time to Start Was Yesterday. The Next Best Time Is NOW.</h2>
+    <div class="center" style="margin-top:16px;"><a href="#offer" class="cta-btn">I'm ready to join the Grown Academy</a></div>
+    <p style="margin-top:14px;">Your dream of earning online is closer than you think. Let's make it happen — together.</p>
+  </section> -->
+
+  <!-- 15. Value stack -->
+  <section id="offer">
+    <h2>Everything You'll Be Getting</h2>
+    <ul class="value-list">
+      <li>Step-by-step beginner's guide to Affiliate Marketing from scratch <span class="price">₦50,000</span></li>
+      <li>How to select the best companies &amp; fastest-selling products <span class="price">₦42,000</span></li>
+      <li>Running professional Facebook &amp; Instagram ads like a pro <span class="price">₦150,000</span></li>
+      <li>Professional advert design training <span class="price">₦63,000</span></li>
+      <li>Automation setup for a stress-free business <span class="price">₦90,000</span></li>
+      <li>Copy-and-paste templates to make your first ₦200k in a month <span class="price">₦25,000</span></li>
+      <li>Access to the Smart Earning Academy VIP Community <span class="price">₦90,000</span></li>
+      <li>Direct personal coaching &amp; access to me <span class="price">Priceless</span></li>
+      <li>Bonus: Personal brand strategies, webinar templates &amp; sales scripts <span class="price">₦70,000</span></li>
+    </ul>
+    <p style="margin-top:10px;">Total value as a Smart Earning Academy student: <strong>₦580,000</strong> </p>
+  </section>
+
+  <!-- 16. Discount ladder -->
+  <!-- <section>
+    <h2>A Considerate Discount</h2>
+    <p>I've seen a lot of university students who really need this but can't afford the full ₦500,000, so I reduced the price drastically. That's exactly what people have been paying to join Grown Academy — ₦150,000 — for a while now, before my last webinar.</p>
+    <p>Because you've shown seriousness by following through to this point, I'll give you an extra ₦100,000 discount, only if you're starting immediately.</p>
+   
+  </section> -->
+
+  <!-- 17. Extra bonus -->
+  <section>
+    <h2>Extra Free Gift</h2>
+     <p>You’ll also receive this bonus at no extra cost:
+
+        Bonus Training
+        How I Built My First Million Online
+
+        In this audio lesson, I share my personal journey, lessons learned, and practical principles that have helped many of my students grow their online businesses.
+    </p>
+    
+  </section>
+
+  <!-- 18. Final CTA + timer -->
+  <section>
+
+    <div class="countdown">
+        <p style="font-weight: bold;" >Price goes back to ₦150,000 soon</p>
+        <!-- <div class="timer">soon</div> -->
+    </div>
+    
+  </section>
+
+  <!-- <footer>
+    © Grown Academy — Affiliate Marketing Sales Secrets
+  </footer> -->
+
+</div>
+</body>
+</html>
