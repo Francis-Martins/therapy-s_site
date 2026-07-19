@@ -92,17 +92,6 @@ document.getElementById("links").addEventListener("click", function (e) {
 
 
 
-// loadProfile();
-// loadLinks();
-
-function withTimeout(promise, ms){
-  return Promise.race([
-    promise,
-    new Promise((_, reject) => 
-      setTimeout(() => reject(new Error('timeout')), ms)
-    )
-  ]);
-}
 
 function revealPage(){
   const loader = document.getElementById('loader');
@@ -112,20 +101,11 @@ function revealPage(){
   setTimeout(()=>{loader.style.display = 'none';}, 500)
 }
 
-const minTimer = new Promise(resolve => setTimeout(resolve, 500));
+Promise.all( loadLinks())
+  .catch(err => {
+    console.error('Failed to load profile/links:', err);
+    document.getElementById('links').innerHTML = 
+    '<p style="color:white;"> Couldn\'t load content right now. <button id="retryBtn" onclick ="location.reload()"> Retry</button></p>';
+  })
+  .finally(revealPage);
 
-const pageLoaded = new Promise(resolve => {
-  if (document.readyState === 'complete') resolve();
-  else window.addEventListener('load',resolve);
-});
-
-const dataFetch = withTimeout(
-  Promise.all([loadProfile(), loadLinks()]), 
-  15000
-).catch(err => {
-  console.error('Failed to load profile/links:', err);
-  document.getElementById('links').innerHTML = 
-  '<p style="color:white;"> Couldn\'t load content right now. <button id="retryBtn" onclick ="location.reload()"> Retry</button></p>';
-});
-
-Promise.all([dataFetch, pageLoaded, minTimer]).then(revealPage);
