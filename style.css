@@ -15,7 +15,8 @@
 
 body {
   margin: 0;
-background: linear-gradient(to top, #1a120c, #3d2a1c, #6b4a30);  color: var(--ink);
+  background: linear-gradient(to top, rgb(11, 11, 11), black,rgb(56, 56, 56) ) ;
+  color: var(--ink);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   display: flex;
