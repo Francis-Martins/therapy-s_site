@@ -105,7 +105,7 @@ Promise.all( loadLinks())
   .catch(err => {
     console.error('Failed to load profile/links:', err);
     document.getElementById('links').innerHTML = 
-    '<p style="color:white;"> Couldn\'t load content right now. <button id="retryBtn" onclick ="location.reload()"> Retry</button></p>';
+    '<p style="color:white;"></p>';
   })
   .finally(revealPage);
 
